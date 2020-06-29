@@ -1,10 +1,18 @@
 
+"""
+The config module is concerned with configuration of the game.
+"""
+
 import sys
 import json
 from player import Player
 from strategy import build_strategy
 
 class Config:
+    """
+    The config module is concerned with configuration of the game.
+    TODO: this should be a namedtuple
+    """
     def __init__(self, num_players, num_cards, num_games, is_verbose, players=[]):
         self.num_players = num_players
         self.num_cards = num_cards
@@ -16,6 +24,9 @@ class Config:
         self.players = players
 
 def build_config_from_json_file(json_file_path):
+    """
+    Build a configuration from a JSON file
+    """
     try:
         json_file = open(json_file_path, "r")
         json_str = json_file.read()
@@ -27,6 +38,9 @@ def build_config_from_json_file(json_file_path):
         sys.exit(-1)
 
 def build_config_from_json(json_str):
+    """
+    Build a configuration from a JSON string
+    """
     try:
         json_dict = json.loads(json_str)
 
@@ -44,6 +58,9 @@ def build_config_from_json(json_str):
         sys.exit(-1)
 
 def build_player(json_player):
+    """
+    Build a Player from a JSON fragment. e.g. {"name": "mozart", "strategy": "max_card"}
+    """
     name = json_player["name"]
     strategy = build_strategy(json_player["strategy"])
     return Player(name, strategy)

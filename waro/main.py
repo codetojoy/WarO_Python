@@ -1,4 +1,8 @@
 
+"""
+The entry point for the War-O game
+"""
+
 import sys
 import traceback
 
@@ -6,6 +10,9 @@ from config import build_config_from_json_file
 from tourney import play_tourney
 
 def main():
+    """
+    entry point for the War-O game
+    """
     try:
         json_file = sys.argv[1]
         config = build_config_from_json_file(json_file)
