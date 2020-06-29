@@ -2,8 +2,7 @@
 
 docker run \
     --rm --name waro-python \
-    -i --log-driver=none -a stdin -a stdout -a stderr \
+    -i --log-driver=none -a stdin -a stdout -a stderr -w /tmp \
     -v $(pwd):/tmp \
-    python:latest \
-    python3 /tmp/waro/main.py
-
+    python:3.8.3 \
+    python3 waro/main.py config.json
