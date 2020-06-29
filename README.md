@@ -22,7 +22,7 @@ Usage with Docker (outside container):
 Usage with Docker (inside container):
 ---------
 
-* [here](README.docker.md)
+* [here](README.docker.interactive.md)
 
 Rules:
 ---------
