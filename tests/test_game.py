@@ -1,5 +1,5 @@
 
-from config import Config
+from config import build_config
 from dealer import Dealer
 import game as g
 from hand import Kitty, Hand
@@ -20,7 +20,7 @@ def test_find_game_winner_basic():
 
     num_players = len(players)
     num_cards = 12
-    config = Config(num_players, num_cards, 0, False)
+    config = build_config(num_players, num_cards, 0, False)
 
     # test
     winner = g.find_game_winner(players)
@@ -34,7 +34,7 @@ def test_play_with_table_basic():
     players = [p1, p2, p3]
     num_players = len(players)
     num_cards = 12
-    config = Config(num_players, num_cards, 0, False)
+    config = build_config(num_players, num_cards, 0, False)
 
     kitty = Kitty(Hand([10,11,12]))
     Table = namedtuple('Table', 'kitty players')

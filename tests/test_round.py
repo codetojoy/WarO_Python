@@ -1,5 +1,5 @@
 
-from config import Config
+from config import build_config
 from dealer import Dealer
 from hand import Kitty, Hand
 from player import Player, build_bid
@@ -12,7 +12,7 @@ def test_get_bids_basic():
                 Player("chopin", build_selector("next_card"), Hand([7,8,9])) ]
     num_players = len(players)
     num_cards = 12
-    config = Config(num_players, num_cards, 0, False)
+    config = build_config(num_players, num_cards, 0, False)
 
     prize_card =  10
 
