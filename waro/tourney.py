@@ -1,17 +1,17 @@
 
-from game import Game
+import game
 
 def play_tourney(config):
     for i in range(0, config.num_games):
-        Game().play(config)
+        game.play_game(config)
 
     for player in config.players:
         player.new_game()  # clear previous game stats
-        
-    winner = find_tourney_winner(config.players)
-    display_info(winner, config.players, config.is_verbose)
 
-def display_info(winner, players, is_verbose):
+    winner = find_tourney_winner(config.players)
+    display_tourney_info(winner, config.players, config.is_verbose)
+
+def display_tourney_info(winner, players, is_verbose):
     print("TRACER TOURNEY WINNER: " + str(winner))
 
     if (is_verbose):

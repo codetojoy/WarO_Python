@@ -1,7 +1,6 @@
 
-from bid import build_bid
 from hand import Hand
-from player import Player, build_player_stats
+from player import Player, build_player_stats, build_bid
 from strategy import NextCard
 
 def test_wins_round_basic():

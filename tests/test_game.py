@@ -1,10 +1,9 @@
 
-from bid import build_bid
 from config import Config
 from dealer import Dealer
-from game import Game
+import game as g
 from hand import Kitty, Hand
-from player import Player, build_player_stats
+from player import Player, build_player_stats, build_bid
 from round import Round
 from strategy import NextCard
 
@@ -24,7 +23,7 @@ def test_find_game_winner_basic():
     config = Config(num_players, num_cards, 0, False)
 
     # test
-    winner = Game().find_game_winner(players)
+    winner = g.find_game_winner(players)
 
     assert winner.name == "mozart"
 
@@ -42,7 +41,7 @@ def test_play_with_table_basic():
     table = Table(kitty=kitty, players=players)
 
     # test
-    Game().play_with_table(table, players, config)
+    g.play_game_with_table(table, players, config)
 
     assert len(players) == 3
     assert p1.player_stats.total == 11

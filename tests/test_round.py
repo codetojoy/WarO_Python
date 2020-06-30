@@ -1,9 +1,8 @@
 
-from bid import build_bid
 from config import Config
 from dealer import Dealer
 from hand import Kitty, Hand
-from player import Player
+from player import Player, build_bid
 from round import Round
 from strategy import NextCard
 
