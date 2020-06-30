@@ -28,3 +28,8 @@ Rules:
 ---------
 
 Rules are [here](Rules.md).
+
+Resources:
+---------
+
+* [1] - https://python-docs.readthedocs.io/en/latest/writing/structure.html
