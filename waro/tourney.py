@@ -7,7 +7,7 @@ def play_tourney(config):
         game.play_game(config)
 
     for player in config.players:
-        player.new_game()  # clear previous game stats
+        player.new_game()  # clear last game stats
 
     winner = find_tourney_winner(config.players)
     display_tourney_info(winner, config.players, config.is_verbose)
