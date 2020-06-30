@@ -8,10 +8,13 @@ from hand import HandOwner
 from collections import namedtuple
 
 class Player(HandOwner):
-    def __init__(self, name, strategy, hand=Hand()):
+    def __init__(self, name, selector, hand=Hand()):
         HandOwner.__init__(self, name, hand)
-        self.strategy = strategy
+        self.selector = selector
         self.player_stats = new_player_stats()
+
+    def play_card(self, prize_card, hand, max_card):
+        return self.selector(prize_card, hand, max_card)
 
     def wins_round(self, bid):
         self.hand.select(bid.offer)

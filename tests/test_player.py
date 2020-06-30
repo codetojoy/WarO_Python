@@ -1,10 +1,10 @@
 
 from hand import Hand
 from player import Player, build_player_stats, build_bid
-from strategy import NextCard
+from strategy import build_selector
 
 def test_wins_round_basic():
-    p = Player("mozart", NextCard(), Hand([2,4,6]))
+    p = Player("mozart", build_selector("next_card"), Hand([2,4,6]))
     prize_card =  10
     offer = 4
     bid = build_bid(prize_card, offer, p)
@@ -17,7 +17,7 @@ def test_wins_round_basic():
     assert p.player_stats.num_rounds_won == 1
 
 def test_loses_round_basic():
-    p = Player("mozart", NextCard(), Hand([2,4,6]))
+    p = Player("mozart", build_selector("next_card"), Hand([2,4,6]))
     prize_card =  10
     offer = 4
     bid = build_bid(prize_card, offer, p)
@@ -28,7 +28,7 @@ def test_loses_round_basic():
     assert p.hand.cards == [2,6]
 
 def test_wins_game_basic():
-    p = Player("mozart", NextCard(), Hand([2,4,6]))
+    p = Player("mozart", build_selector("next_card"), Hand([2,4,6]))
     p.player_stats = build_player_stats(1,1,1)
 
     # test

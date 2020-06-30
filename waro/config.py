@@ -6,7 +6,7 @@ The config module is concerned with configuration of the game.
 import sys
 import json
 from player import Player
-from strategy import build_strategy
+from strategy import build_selector
 
 class Config:
     """
@@ -62,5 +62,5 @@ def build_player(json_player):
     Build a Player from a JSON fragment. e.g. {"name": "mozart", "strategy": "max_card"}
     """
     name = json_player["name"]
-    strategy = build_strategy(json_player["strategy"])
+    strategy = build_selector(json_player["strategy"])
     return Player(name, strategy)

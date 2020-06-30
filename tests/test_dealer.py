@@ -3,7 +3,7 @@ from config import Config
 from dealer import Dealer
 from hand import Kitty
 from player import Player
-from strategy import NextCard
+from strategy import build_selector
 
 def test_build_deck_length():
     num_cards = 20
@@ -38,9 +38,9 @@ def test_partition_basic():
         assert len(hand) == 3
 
 def test_deal_basic():
-    p1 = Player("mozart", NextCard())
-    p2 = Player("beethoven", NextCard())
-    p3 = Player("chopin", NextCard())
+    p1 = Player("mozart", build_selector("next_card"))
+    p2 = Player("beethoven", build_selector("next_card"))
+    p3 = Player("chopin", build_selector("next_card"))
     players = [p1, p2, p3]
     num_players = len(players)
     num_cards = 12
