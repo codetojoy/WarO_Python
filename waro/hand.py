@@ -2,9 +2,7 @@
 import abc
 
 class HandOwner(abc.ABC):
-    """
-    anything that 'owns' a set of cards (e.g. player, kitty)
-    """
+    """ Anything that 'owns' a set of cards (e.g. player, kitty). """
     def __init__(self, name, hand=None):
         self.name = name
         self.hand = hand
@@ -16,9 +14,7 @@ class HandOwner(abc.ABC):
         return result
 
 class Hand:
-    """
-    A "Hand" is a set of cards (integers).
-    """
+    """ A "Hand" is a set of cards (integers). """
     def __init__(self, cards=[]):
         self.cards = cards
 
@@ -29,14 +25,10 @@ class Hand:
         return result
 
     def select(self, card):
-        """
-        Selecting a card for a "play" (and removal from hand).
-        """
+        """ Selecting a card for a "play" (and removal from hand). """
         self.cards.remove(card)
 
 class Kitty(HandOwner):
-    """
-    The kitty is a set of cards and effectively a "hand".
-    """
+    """ The kitty is a set of cards and effectively a "hand". """
     def __init__(self, hand=None):
         HandOwner.__init__(self, "Kitty", hand)

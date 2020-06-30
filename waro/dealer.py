@@ -1,6 +1,6 @@
 
 """
-This module is concerned with deal cards to players.
+This module is concerned with dealing cards to players (and the kitty).
 """
 
 from collections import namedtuple
@@ -10,13 +10,12 @@ from hand import Hand
 from hand import Kitty
 
 class Dealer:
+    """ Dealer can deal out the deck to players (and the kitty). """
     def __init__(self, config):
         self.config = config
 
     def deal(self, players):
-        """
-        Deal out cards to players (and kitty)
-        """
+        """ Deal out cards to players (and kitty). """
         deck = self.make_shuffled_deck()
         hands = self.partition(deck, self.config.num_cards_per_hand)
         kitty = Kitty(Hand(hands[0]))
@@ -27,22 +26,16 @@ class Dealer:
         return table
 
     def make_shuffled_deck(self):
-        """
-        Build a deck of cards, 1 to N, and shuffle them.
-        """
+        """ Build a deck of cards, 1 to N, and shuffle them. """
         deck = list(range(1, self.config.num_cards + 1))
         shuffle(deck)
         return deck
 
     def partition(self, deck, num_cards_per_hand):
-        """
-        Partition a set of N cards into sets of size M.
-        """
+        """ Partition a set of N cards into sets of size M. """
         return list(self.partition_generator(deck, num_cards_per_hand))
 
     def partition_generator(self, list, n):
-        """
-        Build a generator for partitioning.
-        """
+        """ Build a generator for partitioning. """
         for i in range(0, len(list), n):
             yield list[i:i + n]

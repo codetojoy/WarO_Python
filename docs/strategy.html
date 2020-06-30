@@ -25,13 +25,14 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-build_selector"><strong>build_selector</strong></a>(strategy_str)</dt></dl>
- <dl><dt><a name="-console"><strong>console</strong></a>(prize_card, hand, max_card)</dt></dl>
- <dl><dt><a name="-hybrid"><strong>hybrid</strong></a>(prize_card, hand, max_card)</dt></dl>
- <dl><dt><a name="-max_card"><strong>max_card</strong></a>(prize_card, hand, max_card)</dt></dl>
- <dl><dt><a name="-min_card"><strong>min_card</strong></a>(prize_card, hand, max_card)</dt></dl>
- <dl><dt><a name="-nearest_card"><strong>nearest_card</strong></a>(prize_card, hand, max_card)</dt></dl>
- <dl><dt><a name="-next_card"><strong>next_card</strong></a>(prize_card, hand, max_card)</dt></dl>
- <dl><dt><a name="-parse_input"><strong>parse_input</strong></a>(value)</dt></dl>
+<td width="100%"><dl><dt><a name="-build_selector"><strong>build_selector</strong></a>(strategy_str)</dt><dd><tt>Returns&nbsp;selector&nbsp;function&nbsp;based&nbsp;on&nbsp;the&nbsp;name&nbsp;provided.<br>
+e.g.&nbsp;"max_card",&nbsp;"nearest_card",&nbsp;etc.</tt></dd></dl>
+ <dl><dt><a name="-console"><strong>console</strong></a>(prize_card, hand, max_card)</dt><dd><tt>Console&nbsp;strategy&nbsp;gets&nbsp;input&nbsp;from&nbsp;the&nbsp;user.</tt></dd></dl>
+ <dl><dt><a name="-hybrid"><strong>hybrid</strong></a>(prize_card, hand, max_card)</dt><dd><tt>Hybrid&nbsp;strategy&nbsp;pivots,&nbsp;based&nbsp;on&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;prize.</tt></dd></dl>
+ <dl><dt><a name="-max_card"><strong>max_card</strong></a>(prize_card, hand, max_card)</dt><dd><tt>Max-card&nbsp;strategy&nbsp;always&nbsp;picks&nbsp;the&nbsp;highest&nbsp;card&nbsp;in&nbsp;the&nbsp;hand.</tt></dd></dl>
+ <dl><dt><a name="-min_card"><strong>min_card</strong></a>(prize_card, hand, max_card)</dt><dd><tt>Min-card&nbsp;strategy&nbsp;always&nbsp;picks&nbsp;the&nbsp;lowest&nbsp;card&nbsp;in&nbsp;the&nbsp;hand.</tt></dd></dl>
+ <dl><dt><a name="-nearest_card"><strong>nearest_card</strong></a>(prize_card, hand, max_card)</dt><dd><tt>Nearest-card&nbsp;strategy&nbsp;picks&nbsp;the&nbsp;card&nbsp;closest&nbsp;to&nbsp;the&nbsp;prize&nbsp;card.</tt></dd></dl>
+ <dl><dt><a name="-next_card"><strong>next_card</strong></a>(prize_card, hand, max_card)</dt><dd><tt>Next-card&nbsp;strategy&nbsp;just&nbsp;picks&nbsp;the&nbsp;next&nbsp;card&nbsp;in&nbsp;the&nbsp;hand&nbsp;(effectively&nbsp;random).</tt></dd></dl>
+ <dl><dt><a name="-parse_input"><strong>parse_input</strong></a>(value)</dt><dd><tt>Get&nbsp;intput&nbsp;from&nbsp;the&nbsp;user.&nbsp;No&nbsp;error-checking.</tt></dd></dl>
 </td></tr></table>
 </body></html>

@@ -11,18 +11,17 @@ from player import Player
 from strategy import build_selector
 
 def build_config(num_players, num_cards, num_games, is_verbose, players=[]):
+    """ Build a config "named tuple". """
     Config = collections.namedtuple("Config", "num_players num_cards max_card num_games is_verbose num_groups num_cards_per_hand players")
     num_groups = num_players + 1  # include kitty
     num_cards_per_hand = num_cards // num_groups
     config = Config(num_players=num_players, num_cards=num_cards, max_card=num_cards,
-                    num_games=num_games, is_verbose=is_verbose, num_groups=num_groups,
+                    is_verbose=is_verbose, num_groups=num_groups, num_games=num_games,
                     num_cards_per_hand=num_cards_per_hand, players=players)
     return config
 
 def build_config_from_json_file(json_file_path):
-    """
-    Build a configuration from a JSON file
-    """
+    """ Build a configuration from a JSON file. """
     try:
         json_file = open(json_file_path, "r")
         json_str = json_file.read()
@@ -34,9 +33,7 @@ def build_config_from_json_file(json_file_path):
         sys.exit(-1)
 
 def build_config_from_json(json_str):
-    """
-    Build a configuration from a JSON string
-    """
+    """ Build a configuration from a JSON string. """
     try:
         json_dict = json.loads(json_str)
 
@@ -55,7 +52,8 @@ def build_config_from_json(json_str):
 
 def build_player(json_player):
     """
-    Build a Player from a JSON fragment. e.g. {"name": "mozart", "strategy": "max_card"}
+    Build a Player from a JSON fragment.
+    e.g. {"name": "mozart", "strategy": "max_card"}
     """
     name = json_player["name"]
     strategy = build_selector(json_player["strategy"])
