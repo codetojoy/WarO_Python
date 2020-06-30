@@ -3,7 +3,7 @@ import sys
 
 def hybrid(prize_card, hand, max_card):
     selector = None
-    if (prize_card > (max_card // 2)):
+    if prize_card > (max_card // 2):
         selector = build_selector("max_card")
     else:
         selector = build_selector("min_card")
@@ -25,7 +25,7 @@ def console(prize_card, hand, max_card):
     result = None
     done = False
 
-    while (not done):
+    while not done:
         print("")
         print("prize: " + str(prize_card) + " hand: " + str(hand.cards))
         print("enter your pick:")

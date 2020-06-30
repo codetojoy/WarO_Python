@@ -21,7 +21,7 @@ def play_game_with_table(table, players, config):
     for player in players:
         player.new_game()
 
-    if (config.is_verbose):
+    if config.is_verbose:
         print("TRACER: game kitty: " + str(kitty))
         for player in players:
             print("TRACER: game player: " + str(player))

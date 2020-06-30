@@ -24,7 +24,7 @@ class Hand:
 
     def __str__(self):
         result = ""
-        if (len(self.cards) > 0):
+        if len(self.cards) > 0:
             result = " cards: " + str(self.cards)
         return result
 

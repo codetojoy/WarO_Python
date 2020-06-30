@@ -8,7 +8,7 @@ class Round:
         winning_bid = self.find_winning_bid(bids)
         for bid in bids:
             player = bid.bidder
-            if (player.name == winning_bid.bidder.name):
+            if player.name == winning_bid.bidder.name:
                 player.wins_round(bid)
             else:
                 player.loses_round(bid)
@@ -18,7 +18,7 @@ class Round:
     def display_round_info(self, players, winner_name, prize_card, bids, is_verbose):
         print("TRACER ROUND p: " + winner_name + " wins " + str(prize_card))
 
-        if (is_verbose):
+        if is_verbose:
             for player in players:
                 bid = next(filter(lambda b: b.bidder.name == player.name, bids))
                 print("TRACER ROUND bid: " + str(bid.offer) + " " + str(player))

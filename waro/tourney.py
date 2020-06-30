@@ -14,7 +14,7 @@ def play_tourney(config):
 def display_tourney_info(winner, players, is_verbose):
     print("TRACER TOURNEY WINNER: " + str(winner))
 
-    if (is_verbose):
+    if is_verbose:
         for player in players:
             player.new_game()  # clear previous game stats
             print("TRACER TOURNEY " + str(player))
