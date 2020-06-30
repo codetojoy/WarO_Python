@@ -18,7 +18,7 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="hand.html#HandOwner">hand.HandOwner</a>(<a href="builtins.html#object">builtins.object</a>)
+<dt><font face="helvetica, arial"><a href="hand.html#HandOwner">hand.HandOwner</a>(<a href="abc.html#ABC">abc.ABC</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="player.html#Player">Player</a>
@@ -37,11 +37,12 @@
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="player.html#Player">Player</a></dd>
 <dd><a href="hand.html#HandOwner">hand.HandOwner</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
 <dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Player-__init__"><strong>__init__</strong></a>(self, name, strategy, hand=&lt;hand.Hand object at 0x10799c080&gt;)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="Player-__init__"><strong>__init__</strong></a>(self, name, selector, hand=&lt;hand.Hand object at 0x10e9a40f0&gt;)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <dl><dt><a name="Player-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
 
@@ -49,12 +50,18 @@ Methods defined here:<br>
 
 <dl><dt><a name="Player-new_game"><strong>new_game</strong></a>(self)</dt></dl>
 
+<dl><dt><a name="Player-play_card"><strong>play_card</strong></a>(self, prize_card, hand, max_card)</dt></dl>
+
 <dl><dt><a name="Player-wins_game"><strong>wins_game</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="Player-wins_round"><strong>wins_round</strong></a>(self, bid)</dt></dl>
 
 <hr>
-Data descriptors inherited from <a href="hand.html#HandOwner">hand.HandOwner</a>:<br>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="abc.html#ABC">abc.ABC</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
