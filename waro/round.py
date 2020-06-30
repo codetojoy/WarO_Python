@@ -1,5 +1,5 @@
 
-from bid import build_bid
+import player as p
 
 class Round:
     def play_round(self, prize_card, players, config):
@@ -30,7 +30,7 @@ class Round:
 
     def get_bid(self, prize_card, player, config):
         offer = player.strategy.select_card(prize_card, player.hand, config.max_card)
-        bid = build_bid(prize_card, offer, player)
+        bid = p.build_bid(prize_card, offer, player)
         return bid
 
     def find_winning_bid(self, bids):

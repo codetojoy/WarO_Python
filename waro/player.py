@@ -1,4 +1,8 @@
 
+"""
+The player module contains players, bids, player stats.
+"""
+
 from hand import Hand
 from hand import HandOwner
 from collections import namedtuple
@@ -53,6 +57,13 @@ def win_game_player_stats(player_stats):
 
 def new_game_player_stats(player_stats):
     new_total = 0
-    num_games_won = player_stats.num_games_won 
+    num_games_won = player_stats.num_games_won
     new_num_rounds_won = 0
     return build_player_stats(new_total, num_games_won, new_num_rounds_won)
+
+# bid is a namedtuple
+
+def build_bid(prize_card, offer, bidder):
+    Bid = namedtuple("Bid", "prize_card offer bidder")
+    bid = Bid(prize_card=prize_card, offer=offer, bidder=bidder)
+    return bid
