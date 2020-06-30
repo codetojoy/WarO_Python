@@ -1,10 +1,10 @@
 
-import dealer as d
-import round as r
+import dealer
+import round
 
 def play_game(config):
     """ Play a full game, with players etc set in configuration. """
-    table = d.Dealer(config).deal(config.players)
+    table = dealer.Dealer(config).deal(config.players)
     kitty = table.kitty
     players = table.players
     play_game_with_table(table, players, config)
@@ -39,8 +39,7 @@ def display_game_info(winner, players, config):
 def play_rounds(kitty, players, config):
     """ A game is plurality of rounds. """
     for prize_card in kitty.hand.cards:
-        round = r.Round()
-        round.play_round(prize_card, players, config)
+        round.play_round(prize_card, players, config.max_card, config.is_verbose)
 
 def find_game_winner(players):
     """ The winner of the game is the player with the highest total. """

@@ -20,44 +20,15 @@
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="player.html">player</a><br>
 </td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ee77aa">
+<tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
-<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
-</font></dt><dd>
-<dl>
-<dt><font face="helvetica, arial"><a href="round.html#Round">Round</a>
-</font></dt></dl>
-</dd>
-</dl>
- <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ffc8d8">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Round">class <strong>Round</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
-    
-<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%">Methods defined here:<br>
-<dl><dt><a name="Round-display_round_info"><strong>display_round_info</strong></a>(self, players, winner_name, prize_card, bids, is_verbose)</dt></dl>
-
-<dl><dt><a name="Round-find_winning_bid"><strong>find_winning_bid</strong></a>(self, bids)</dt></dl>
-
-<dl><dt><a name="Round-get_bid"><strong>get_bid</strong></a>(self, prize_card, player, max_card)</dt></dl>
-
-<dl><dt><a name="Round-get_bids"><strong>get_bids</strong></a>(self, prize_card, players, max_card)</dt></dl>
-
-<dl><dt><a name="Round-play_round"><strong>play_round</strong></a>(self, prize_card, players, config)</dt></dl>
-
-<hr>
-Data descriptors defined here:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-</td></tr></table></td></tr></table>
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-display_round_info"><strong>display_round_info</strong></a>(players, winner_name, prize_card, bids, is_verbose)</dt><dd><tt>Display&nbsp;info&nbsp;about&nbsp;this&nbsp;round.</tt></dd></dl>
+ <dl><dt><a name="-find_winning_bid"><strong>find_winning_bid</strong></a>(bids)</dt><dd><tt>Winning&nbsp;bid&nbsp;is&nbsp;the&nbsp;highest&nbsp;offer.</tt></dd></dl>
+ <dl><dt><a name="-get_bid"><strong>get_bid</strong></a>(prize_card, player, max_card)</dt><dd><tt>Collect&nbsp;bid&nbsp;from&nbsp;the&nbsp;player,&nbsp;for&nbsp;this&nbsp;round.</tt></dd></dl>
+ <dl><dt><a name="-get_bids"><strong>get_bids</strong></a>(prize_card, players, max_card)</dt><dd><tt>Collect&nbsp;bids&nbsp;from&nbsp;all&nbsp;the&nbsp;players,&nbsp;for&nbsp;this&nbsp;round.</tt></dd></dl>
+ <dl><dt><a name="-play_round"><strong>play_round</strong></a>(prize_card, players, max_card, is_verbose)</dt><dd><tt>Play&nbsp;round&nbsp;for&nbsp;this&nbsp;prize-card&nbsp;from&nbsp;the&nbsp;kitty.</tt></dd></dl>
+</td></tr></table>
 </body></html>
