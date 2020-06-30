@@ -14,4 +14,6 @@
     - `docker exec -w /tmp -it waro-python bash`
     - `pip install -U pytest`
         - TODO: how to use `pipenv` to remove this step ??
+        - Presumably, if installed `pipenv` in the container, then we 
+          wouldn't have to install `pytest` (or any package) explicitly.
     - `./test.sh`

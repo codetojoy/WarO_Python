@@ -24,6 +24,11 @@ Usage with Docker (inside container):
 
 * [here](README.docker.interactive.md)
 
+Usage with pipenv:
+---------
+
+* [here](README.pipenv.md)
+
 Rules:
 ---------
 
