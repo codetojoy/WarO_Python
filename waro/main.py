@@ -6,8 +6,8 @@ The entry point for the War-O game
 import sys
 import traceback
 
-from config import build_config_from_json_file
-from tourney import play_tourney
+import config
+import tourney
 
 def main():
     """
@@ -15,8 +15,8 @@ def main():
     """
     try:
         json_file = sys.argv[1]
-        config = build_config_from_json_file(json_file)
-        play_tourney(config)
+        configuration = config.build_config_from_json_file(json_file)
+        tourney.play_tourney(configuration)
         print("Ready.")
     except:
         e = sys.exc_info()[0]

@@ -1,5 +1,7 @@
 
-class HandOwner:
+import abc
+
+class HandOwner(abc.ABC):
     """
     anything that 'owns' a set of cards (e.g. player, kitty)
     """
