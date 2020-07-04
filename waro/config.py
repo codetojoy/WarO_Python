@@ -26,19 +26,26 @@ def build_config(num_players, num_cards, num_games, is_verbose, players=[]):
     return config
 
 def build_config_from_json_file(json_file_path):
-    """ Build a configuration from a JSON file. """
+    """
+    Build a configuration from a JSON file.
+    If we can't use the file, that is a non-recoverable error so we exit.
+    """
     try:
         json_file = open(json_file_path, "r")
         json_str = json_file.read()
         config = build_config_from_json(json_str)
         return config
-    except:
+    except (PermissionError, FileNotFoundError) as e:
         e = sys.exc_info()[0]
         print("illegal json: " + str(e))
         sys.exit(-1)
 
 def build_config_from_json(json_str):
-    """ Build a configuration from a JSON string. """
+    """
+    Build a configuration from a JSON string.
+    If we can't parse the string (e.g. if num_cards is not an integer), that 
+    is a non-recoverable error and we exit.
+    """
     try:
         json_dict = json.loads(json_str)
 
