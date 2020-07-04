@@ -7,6 +7,7 @@ import sys
 import json
 import collections
 
+from errors import ConfigurationError
 from player import Player
 from strategy import build_selector
 
@@ -28,23 +29,20 @@ def build_config(num_players, num_cards, num_games, is_verbose, players=[]):
 def build_config_from_json_file(json_file_path):
     """
     Build a configuration from a JSON file.
-    If we can't use the file, that is a non-recoverable error so we exit.
+    If we can't use the file, raise a ConfigurationError.
     """
     try:
-        json_file = open(json_file_path, "r")
-        json_str = json_file.read()
-        config = build_config_from_json(json_str)
-        return config
+        with open(json_file_path, "r") as json_file:
+            json_str = json_file.read()
+            return build_config_from_json(json_str)
     except (PermissionError, FileNotFoundError) as e:
-        e = sys.exc_info()[0]
-        print("illegal json: " + str(e))
-        sys.exit(-1)
+        raise ConfigurationError("I/O error with " + json_file_path) from e
 
 def build_config_from_json(json_str):
     """
     Build a configuration from a JSON string.
-    If we can't parse the string (e.g. if num_cards is not an integer), that 
-    is a non-recoverable error and we exit.
+    If we can't parse the string (e.g. if num_cards is not an integer), then
+    raise a ConfigurationError.
     """
     try:
         json_dict = json.loads(json_str)
@@ -57,10 +55,8 @@ def build_config_from_json(json_str):
         num_players = len(players)
 
         return build_config(num_players, num_cards, num_games, is_verbose, players)
-    except:
-        e = sys.exc_info()[0]
-        print("illegal json: " + str(e))
-        sys.exit(-1)
+    except (ValueError) as e:
+        raise ConfigurationError("parse error for JSON: " + str(e)) from e
 
 def build_player(json_player):
     """
