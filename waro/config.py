@@ -10,9 +10,14 @@ import collections
 from player import Player
 from strategy import build_selector
 
+"""
+A 'Config' captures info from the JSON file (num_cards, players) and
+holds some derived, computed values as well.
+"""
+Config = collections.namedtuple("Config", "num_players num_cards max_card num_games is_verbose num_groups num_cards_per_hand players")
+
 def build_config(num_players, num_cards, num_games, is_verbose, players=[]):
     """ Build a config "named tuple". """
-    Config = collections.namedtuple("Config", "num_players num_cards max_card num_games is_verbose num_groups num_cards_per_hand players")
     num_groups = num_players + 1  # include kitty
     num_cards_per_hand = num_cards // num_groups
     config = Config(num_players=num_players, num_cards=num_cards, max_card=num_cards,

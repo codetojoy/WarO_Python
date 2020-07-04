@@ -44,9 +44,13 @@ class Player(HandOwner):
 
 # player_stats is named tuple:
 
+"""
+PlayerStats tracks stats for a game and for a tourney.
+"""
+PlayerStats = namedtuple("PlayerStats", "total num_games_won num_rounds_won")
+
 def build_player_stats(total, num_games_won, num_rounds_won):
     """ Build a named tuple for "player stats". """
-    PlayerStats = namedtuple("PlayerStats", "total num_games_won num_rounds_won")
     player_stats = PlayerStats(total=total, num_games_won=num_games_won, num_rounds_won=num_rounds_won)
     return player_stats
 
@@ -77,8 +81,10 @@ def new_game_player_stats(player_stats):
 
 # bid is a namedtuple
 
+""" Bid is container for a player's bid info. """
+Bid = namedtuple("Bid", "prize_card offer bidder")
+
 def build_bid(prize_card, offer, bidder):
     """ Create a "bid" named tuple. """
-    Bid = namedtuple("Bid", "prize_card offer bidder")
     bid = Bid(prize_card=prize_card, offer=offer, bidder=bidder)
     return bid
