@@ -18,8 +18,8 @@ def display_tourney_info(winner, players, is_verbose):
 
     if is_verbose:
         for player in players:
-            player.new_game()  # clear previous game stats
-            print("TRACER TOURNEY " + str(player))
+            if player.name != winner.name:
+                print("TRACER TOURNEY " + str(player))
 
 def find_tourney_winner(players):
     """ Tourney winner is the player who has won the most games. """

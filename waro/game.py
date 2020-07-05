@@ -33,7 +33,8 @@ def display_game_info(winner, players, config):
 
     if config.is_verbose:
         for player in players:
-            print("TRACER GAME " + str(player))
+            if player.name != winner.name:
+                print("TRACER GAME " + str(player))
     print("")
 
 def play_rounds(kitty, players, config):
