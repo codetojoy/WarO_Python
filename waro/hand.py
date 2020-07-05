@@ -19,10 +19,7 @@ class Hand:
         self.cards = cards
 
     def __str__(self):
-        result = ""
-        if len(self.cards) > 0:
-            result = " cards: " + str(self.cards)
-        return result
+        return f"cards: {self.cards}" if self.cards else ""
 
     def select(self, card):
         """ Selecting a card for a "play" (and removal from hand). """
