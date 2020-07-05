@@ -5,12 +5,12 @@ from hand import Kitty
 from player import Player
 from strategy import build_selector
 
-def test_build_deck_length():
+def test_make_shuffled_deck_length():
     num_cards = 20
     config = build_config(0, num_cards, 0, False)
 
     # test
-    deck = Dealer(config).make_shuffled_deck()
+    deck = Dealer(config)._make_shuffled_deck()
 
     assert len(deck) == 20
 
@@ -19,7 +19,7 @@ def test_make_shuffled_deck_shuffled():
     config = build_config(0, num_cards, 0, False)
 
     # test
-    deck = Dealer(config).make_shuffled_deck()
+    deck = Dealer(config)._make_shuffled_deck()
 
     count = sum(deck)
     assert count == (num_cards * (num_cards + 1)) / 2
@@ -31,7 +31,7 @@ def test_partition_basic():
     deck = list(range(1, num_cards + 1))
 
     # test
-    result = Dealer(config).partition(deck, config.num_cards_per_hand)
+    result = Dealer(config)._partition(deck, config.num_cards_per_hand)
 
     assert len(result) == 4
     for hand in result:
