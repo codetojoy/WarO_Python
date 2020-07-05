@@ -2,8 +2,10 @@
 ### Summary
 
 * We assume that Docker is already installed.
-* to run game:
-    - `./docker_run.sh`
+* to build the image:
+    - `./docker_build_image.sh`
 * to execute tests:
-    - TODO
-    - how to install "pytest" or use "pipenv" to express dependency?
+    - `./docker_test.sh`
+* to run game:
+    - edit desired config file in `docker_run.sh`
+    - `./docker_run.sh`

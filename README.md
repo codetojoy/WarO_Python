@@ -14,15 +14,10 @@ Usage without Docker:
 * to run app: `./run.sh`
 * to execute tests: `./test.sh`
 
-Usage with Docker (outside container):
+Usage with Docker:
 ---------
 
 * [here](README.docker.md)
-
-Usage with Docker (inside container):
----------
-
-* [here](README.docker.interactive.md)
 
 Usage with pipenv:
 ---------
