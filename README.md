@@ -2,7 +2,8 @@
 WarO_Python
 =========
 
-a Python submission for War-O as a code exercise
+* a Python submission for War-O as a code exercise
+* thanks to [Evan Porter](https://github.com/evanepio) for a thorough code review!
 
 Usage without Docker:
 ---------
