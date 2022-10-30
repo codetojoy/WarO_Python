@@ -34,3 +34,4 @@ Resources:
 ---------
 
 * [1] - https://python-docs.readthedocs.io/en/latest/writing/structure.html
+* [2] - switch `master` to `main` - https://github.com/StevenMMortimer/master-to-main
